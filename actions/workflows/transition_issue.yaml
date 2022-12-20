@@ -1,0 +1,11 @@
+version: 1.0
+
+input:
+  - transition_data
+
+tasks:
+  create_jira_issue:
+    action: jira.transition_issue
+    input:
+      summary: <% ctx().alert_data.issue.summary %>
+      type: <% ctx().alert_data.issue.type %>

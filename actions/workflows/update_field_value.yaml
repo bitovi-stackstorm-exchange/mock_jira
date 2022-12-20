@@ -1,0 +1,12 @@
+version: 1.0
+
+input:
+  - update_data
+
+tasks:
+  create_jira_issue:
+    action: jira.update_field_value
+    input:
+      key: <% ctx().update_data.issue.key %>
+      field: <% ctx().update_data.issue.field %>
+      value: <% ctx().update_data.issue.value %>

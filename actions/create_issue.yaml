@@ -1,0 +1,11 @@
+---
+name: create_issue
+pack: mock_jira
+description: create jira issue
+runner_type: orquesta
+entry_point: workflows/create_issue.yaml
+enabled: true
+parameters:
+  alert_data:
+    required: true
+    type: object
