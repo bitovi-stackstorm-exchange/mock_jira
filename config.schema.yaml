@@ -2,7 +2,7 @@
   jira_api_url:
     description: "Jira API URL"
     type: "string"
-    default: "https://bitovi.atlassian.net/"
+    default: "https://bitovi.atlassian.net"
     required: true
   verify:
     description: "Verify SSL certificate. Set to False to disable verification. Default True"
@@ -16,7 +16,6 @@
     default: "oauth"
     enum:
       - basic
-      - cookie
   username:
     description: "Username if using the basic or cookie auth_method"
     type: "string"
@@ -32,17 +31,7 @@
     type: "string"
     secret: false
     required: true
-  # jira_svc_account:
-  #   description: "Jira service account name"
-  #   type: "string"
-  #   default: "username"
-  #   required: true
-  # jira_svc_password:
-  #   description: "Jira service Account Password if using the basic auth_method. Necessary for component posting through Jira's REST API."
-  #   type: "string"
-  #   default: ""
-  #   secret: true
-  #   required: true
+    default: "ST2DEMO"
 
 
 

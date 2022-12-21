@@ -9,9 +9,6 @@ name: ST2 Jira Actions pack
 description: Pack for Jira actions, workflows and rules
 # Keywords which are used when searching for packs.
 keywords:
-    - jira
-    - transport
-    - call processing
     - issues
     - ticket management
     - project management
