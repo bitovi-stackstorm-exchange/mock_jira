@@ -1,12 +1,9 @@
 ---
 name: create_issue
-pack: mock_jira
-description: create jira issue
-# runner_type: orquesta
 runner_type: python-script
-# entry_point: workflows/create_issue.yaml
-entry_point: create_issue.py
+description: Create a new JIRA issue / ticket.
 enabled: true
+entry_point: create_issue.py
 parameters:
   summary:
     type: string
