@@ -2,10 +2,30 @@
 name: create_issue
 pack: mock_jira
 description: create jira issue
-runner_type: orquesta
-entry_point: workflows/create_issue.yaml
+# runner_type: orquesta
+runner_type: python-script
+# entry_point: workflows/create_issue.yaml
+entry_point: create_issue.py
 enabled: true
 parameters:
-  alert_data:
+  summary:
+    type: string
+    description: Issue summary.
     required: true
+  type:
+    type: string
+    description: "Issue type. Typical issues type include Task, Story, Epic, Bug. You can also specify a custom issue type."
+    default: Task
+    required: true
+  description:
+    type: string
+    description: Issue description.
+    required: false
+  project:
+    type: string
+    description: destination Project in Jira.
+    required: false
+  extra_fields:
     type: object
+    description: "extra fields like priority, labels, custom fields, etc"
+    required: false
