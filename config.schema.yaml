@@ -1,10 +1,9 @@
 ---
-  url:
-    description: "URL of the JIRA instance (e.g. ``https://myproject.atlassian.net``)"
+  jira_api_url:
+    description: "Jira API URL"
     type: "string"
-    secret: false
+    default: "https://bitovi.atlassian.net"
     required: true
-    default: https://bitovi.atlassian.net
   verify:
     description: "Verify SSL certificate. Set to False to disable verification. Default True"
     type: boolean
@@ -32,3 +31,12 @@
     type: "string"
     secret: false
     required: true
+    default: "ST2DEMO"
+
+
+
+
+
+
+
+ 

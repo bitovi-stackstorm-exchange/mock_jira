@@ -1,0 +1,20 @@
+---
+name: transition_issue
+pack: mock_jira
+description: transition JIRA issue / ticket.
+enabled: true
+
+trigger:
+  type: core.st2.webhook
+  parameters:
+      url: "transition-jira-issue"
+
+criteria:
+  trigger.body.webhookEvent:
+    type: regex
+    pattern: "transition jira issue"
+
+action:
+    ref: mock_jira.transition_issue
+    parameters:
+      transition_data: "{{trigger.body}}"

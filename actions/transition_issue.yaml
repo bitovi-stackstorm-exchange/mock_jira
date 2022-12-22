@@ -1,0 +1,11 @@
+---
+name: transition_issue
+pack: mock_jira
+description: transition jira issue
+runner_type: orquesta
+entry_point: workflows/transition_issue.yaml
+enabled: true
+parameters:
+  transition_data:
+    required: true
+    type: object

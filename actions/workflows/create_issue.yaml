@@ -1,0 +1,19 @@
+version: 1.0
+
+input:
+  - alert_data
+  # - summary
+  # - type
+  # - description
+  # - project
+  # - extra_fields
+
+tasks:
+  create_jira_issue:
+    action: jira.create_issue
+    input:
+      summary: <% ctx().alert_data.summary %>
+      type: <% ctx().alert_data.type %>
+      description: <% ctx().alert_data.description %>
+      project: <% ctx().alert_data.project %>
+      extra_fields: <% ctx().alert_data.extra_fields %>

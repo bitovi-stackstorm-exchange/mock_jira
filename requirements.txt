@@ -1,1 +1,9 @@
+netaddr==0.8.0
+requests==2.24.0
+netmiko==3.2.0
+urllib3==1.25.10
 jira==2.0.0
+pyyaml==4.2b4
+cryptography==2.4.1
+pyjwt==1.6.4
+perfectoactions==2.0.29
