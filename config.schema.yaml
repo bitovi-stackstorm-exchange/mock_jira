@@ -1,8 +1,8 @@
 ---
-  jira_api_url:
-    description: "Jira API URL"
+  url:
+    description: "URL of the JIRA instance (e.g. ``https://myproject.atlassian.net``)"
     type: "string"
-    default: "https://bitovi.atlassian.net"
+    secret: false
     required: true
   verify:
     description: "Verify SSL certificate. Set to False to disable verification. Default True"
@@ -13,9 +13,12 @@
     type: "string"
     secret: false
     required: true
-    default: "oauth"
+    default: "basic"
     enum:
+      - oauth
       - basic
+      - pat
+      - cookie
   username:
     description: "Username if using the basic or cookie auth_method"
     type: "string"
@@ -26,17 +29,44 @@
     type: "string"
     secret: true
     required: false
+  token:
+    description: "PAT token"
+    type: "string"
+    secret: true
+    required: false
+  rsa_cert_file:
+    description: "Path to a private key file, e.g. /home/vagrant/jira.pem"
+    type: "string"
+    secret: false
+    required: false
+  oauth_token:
+    description: "OAuth token"
+    type: "string"
+    secret: true
+    required: false
+  oauth_secret:
+    description: "OAuth secret"
+    type: "string"
+    secret: true
+    required: false
+  consumer_key:
+    description: "Consumer key"
+    type: "string"
+    secret: true
+    required: false
+  poll_interval:
+    description: "Polling interval - default 30s"
+    type: "integer"
+    secret: false
+    required: false
+    default: 30
   project:
     description: "Project to be used as default for actions that don't require or allow a project"
     type: "string"
     secret: false
     required: true
-    default: "ST2DEMO"
-
-
-
-
-
-
-
- 
+  validate:
+    description: "If true it will validate your credentials first."
+    type: boolean
+    default: false
+    required: false
