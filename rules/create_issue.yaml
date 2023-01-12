@@ -7,14 +7,14 @@ enabled: true
 trigger:
   type: core.st2.webhook
   parameters:
-      url: "create-jira-issue"
+      url: create-jira-issue
 
 criteria:
   trigger.body.webhookEvent:
     type: equals
-    pattern: "create"
+    pattern: create
 
 action:
     ref: mock_jira.create_issue
     parameters:
-      alert_data: "{{ trigger }"
+      trigger: "{{ trigger }"

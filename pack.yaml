@@ -4,10 +4,10 @@ name : mock_jira
 description : Jira integrations
 keywords:
   - issues
-  - ticket management
-  - project management
 version: 1.1.0
 python_versions:
   - "3"
 author : Bitovi
 email : karamveer@bitovi.com
+dependencies:
+  - https://github.com/StackStorm-Exchange/stackstorm-jira.git

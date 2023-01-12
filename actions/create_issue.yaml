@@ -1,9 +1,10 @@
 ---
-name: create_issue
-runner_type: python-script
-description: Create a new JIRA issue / ticket.
+name: create_ticket
+pack: mock_vz_workflow
+description: Create pagerduty tickets
+runner_type: orquesta
+entry_point: workflow/create_pg_ticket.yaml
 enabled: true
-entry_point: create_issue.py
 parameters:
   summary:
     type: string
