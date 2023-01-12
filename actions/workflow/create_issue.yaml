@@ -21,3 +21,9 @@ tasks:
       description: <% ctx().description %>
       project: <% ctx().project %>
       extra_fields: <% ctx().extra_fields %>
+    next:
+      - when: <% succeeded() %>
+        publish: res=<% result() %>
+
+output:
+  - result: <% ctx().res %>
