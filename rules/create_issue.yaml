@@ -11,8 +11,8 @@ trigger:
 
 criteria:
   trigger.body.webhookEvent:
-    type: equals
-    pattern: create
+    type: regex
+    pattern: jira:issue_(created|updated)
 
 action:
     ref: mock_jira.create_issue
