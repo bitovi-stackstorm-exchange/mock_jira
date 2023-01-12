@@ -10,7 +10,7 @@ input:
   - extra_fields
 
 vars:
-  - pagerduty: pagerduty_ticket_created
+  - pagerduty: jira_created
 
 tasks:
   create_jira_ticket:

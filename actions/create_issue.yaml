@@ -1,9 +1,9 @@
 ---
 name: create_ticket
-pack: mock_vz_workflow
-description: Create pagerduty tickets
+pack: mock_jira
+description: Create jira tickets
 runner_type: orquesta
-entry_point: workflow/create_pg_ticket.yaml
+entry_point: workflow/create_issue.yaml
 enabled: true
 parameters:
   summary:
