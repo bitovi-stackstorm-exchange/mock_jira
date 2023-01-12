@@ -1,0 +1,20 @@
+
+name: create-jira
+pack: mock_jira
+description: Testing jira ticket creation
+enabled: true
+
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "vz-pack-training-internal"
+
+criteria:
+  trigger.body.webhookEvent: 
+    type: regex
+    pattern: "jira:issue_(created|updated)"
+
+action:
+  ref: mock_jira.create_issue
+  parameters:
+    parameter_body: "{{ trigger }}"
